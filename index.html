@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rewardzen — Complete Tasks &amp; Earn Real Rewards</title>
+    <meta name="description" content="Discover multiple ways to earn online with Rewardzen. Complete tasks, take paid surveys, explore exclusive offers and invite friends to earn real rewards." />
+    <meta property="og:title" content="Rewardzen — Complete Tasks &amp; Earn Real Rewards" />
+    <meta property="og:description" content="Complete tasks, take paid surveys, explore exclusive offers and invite friends to earn real rewards. 1 Coin = ₹1, minimum withdrawal ₹5." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/jpeg" href="./logo.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <!-- ===================================================================
+         1. TOP NAVIGATION BAR (3-Zone Contract)
+         =================================================================== -->
+    <header class="site-header" id="home">
+      <div class="container header-inner">
+        <a href="#top" class="brand-link">
+          <img src="./logo.jpg" alt="Rewardzen logo" class="brand-logo" referrerpolicy="no-referrer" />
+          <span class="brand-name">Rewardzen</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="#top" class="nav-link is-active" data-i18n="nav.home">Home</a>
+          <a href="#how-it-works" class="nav-link" data-i18n="nav.how">How it Works</a>
+          <a href="#earning-options" class="nav-link" data-i18n="nav.options">Earning Options</a>
+          <a href="#reviews" class="nav-link" data-i18n="nav.reviews">Reviews</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-wrap">
+            <button type="button" id="lang-toggle-btn" class="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+              <span id="current-lang-code">EN</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+
+            <div id="lang-dropdown-menu" class="lang-menu hidden" role="listbox" aria-label="Select Language">
+              <button type="button" class="lang-option is-selected" data-lang-option="en">
+                <span>English</span><span>EN</span>
+              </button>
+              <button type="button" class="lang-option" data-lang-option="es">
+                <span>Español</span><span>ES</span>
+              </button>
+              <button type="button" class="lang-option" data-lang-option="hi">
+                <span>हिन्दी</span><span>HI</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="nav-cta" data-open-download="download">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span data-i18n="nav.download">Download App</span>
+          </button>
+
+          <button type="button" id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-drawer" class="mobile-drawer hidden">
+        <a href="#top" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+        <a href="#how-it-works" class="mobile-nav-link" data-i18n="nav.how">How it Works</a>
+        <a href="#earning-options" class="mobile-nav-link" data-i18n="nav.options">Earning Options</a>
+        <a href="#reviews" class="mobile-nav-link" data-i18n="nav.reviews">Reviews</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- ===================================================================
+           2. HERO SECTION (Royal Purple Gradient + Phone Stage on Right)
+           =================================================================== -->
+      <section class="hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-eyebrow">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#FFD016" aria-hidden="true">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span data-i18n="hero.eyebrow">India's Trusted Reward Platform</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span data-i18n="hero.titleLine1">Complete Tasks &amp;</span>
+              <span class="hero-title-gold" data-i18n="hero.titleLine2">Earn Real Rewards</span>
+            </h1>
+
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+              Discover multiple ways to earn online. Complete tasks, take paid surveys, explore exclusive offers and invite friends to earn rewards.
+            </p>
+
+            <div class="hero-pillars">
+              <div class="hero-pillar">
+                <div class="hero-pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <span class="hero-pillar-label" data-i18n="hero.pillar1">Certified Partners</span>
+              </div>
+
+              <div class="hero-pillar">
+                <div class="hero-pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <span class="hero-pillar-label" data-i18n="hero.pillar2">Fast Payouts</span>
+              </div>
+
+              <div class="hero-pillar">
+                <div class="hero-pillar-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </div>
+                <span class="hero-pillar-label" data-i18n="hero.pillar3">Safe &amp; Secure</span>
+              </div>
+            </div>
+
+            <button type="button" class="btn-gold" data-open-download="download">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span data-i18n="hero.cta">Download Rewardzen App</span>
+            </button>
+          </div>
+
+          <!-- Right Column: 3D Tilted Phone + Floating Coins + Gift Box -->
+          <div class="hero-visual">
+            <div class="hero-stage-glow" aria-hidden="true"></div>
+
+            <!-- Floating Gold Coin 1 -->
+            <svg class="float-coin float-coin-1" viewBox="0 0 64 64" aria-hidden="true">
+              <defs>
+                <radialGradient id="coinGrad1" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#FFF3A1" />
+                  <stop offset="55%" stop-color="#FFD016" />
+                  <stop offset="100%" stop-color="#D97706" />
+                </radialGradient>
+              </defs>
+              <circle cx="32" cy="32" r="28" fill="url(#coinGrad1)" stroke="#FDE047" stroke-width="3" />
+              <circle cx="32" cy="32" r="21" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="2" />
+              <text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="25" font-weight="800" fill="#92400E">R</text>
+            </svg>
+
+            <!-- Floating Gold Coin 2 -->
+            <svg class="float-coin float-coin-2" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" fill="url(#coinGrad1)" stroke="#FDE047" stroke-width="3" />
+              <circle cx="32" cy="32" r="21" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="2" />
+              <text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="25" font-weight="800" fill="#92400E">R</text>
+            </svg>
+
+            <!-- Floating Gold Coin 3 -->
+            <svg class="float-coin float-coin-3" viewBox="0 0 64 64" aria-hidden="true">
+              <circle cx="32" cy="32" r="28" fill="url(#coinGrad1)" stroke="#FDE047" stroke-width="3" />
+              <circle cx="32" cy="32" r="21" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="2" />
+              <text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="25" font-weight="800" fill="#92400E">R</text>
+            </svg>
+
+            <div class="phone-pedestal">
+              <div class="hero-phone-frame">
+                <div class="hero-phone-screen">
+                  <div class="phone-notch"></div>
+                  <img src="./logo.jpg" alt="Rewardzen App Icon" class="phone-app-logo" referrerpolicy="no-referrer" />
+                  <div class="phone-app-name">Rewardzen</div>
+
+                  <div class="phone-menu-list">
+                    <button type="button" class="phone-menu-item is-active" data-phone-item="tasks">
+                      <span class="phone-menu-ico">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span data-i18n="phone.tasks">Tasks</span>
+                    </button>
+
+                    <button type="button" class="phone-menu-item" data-phone-item="surveys">
+                      <span class="phone-menu-ico">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect width="14" height="18" x="5" y="3" rx="2"></rect>
+                          <line x1="9" y1="8" x2="15" y2="8"></line>
+                          <line x1="9" y1="12" x2="15" y2="12"></line>
+                        </svg>
+                      </span>
+                      <span data-i18n="phone.surveys">Surveys</span>
+                    </button>
+
+                    <button type="button" class="phone-menu-item" data-phone-item="offers">
+                      <span class="phone-menu-ico">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="8" width="18" height="4" rx="1"></rect>
+                          <path d="M12 8v13"></path>
+                          <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
+                        </svg>
+                      </span>
+                      <span data-i18n="phone.offers">Offers</span>
+                    </button>
+
+                    <button type="button" class="phone-menu-item" data-phone-item="refer">
+                      <span class="phone-menu-ico">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                      </span>
+                      <span data-i18n="phone.refer">Refer &amp; Earn</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="phone-stage-disc" aria-hidden="true"></div>
+            </div>
+
+            <!-- Gift Box + Front R Coin Cluster -->
+            <svg class="float-gift-cluster" viewBox="0 0 130 115" aria-hidden="true">
+              <defs>
+                <linearGradient id="giftBoxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#8B5CF6" />
+                  <stop offset="100%" stop-color="#4C1D95" />
+                </linearGradient>
+                <linearGradient id="giftLidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#A78BFA" />
+                  <stop offset="100%" stop-color="#5B21B6" />
+                </linearGradient>
+              </defs>
+              <!-- Gift Body -->
+              <rect x="42" y="42" width="76" height="62" rx="10" fill="url(#giftBoxGrad)" stroke="#C4B5FD" stroke-opacity="0.35" stroke-width="1.5" />
+              <!-- Gold Vertical Ribbon -->
+              <rect x="72" y="42" width="16" height="62" fill="#FFD016" />
+              <!-- Gift Lid -->
+              <rect x="36" y="28" width="88" height="20" rx="7" fill="url(#giftLidGrad)" stroke="#DDD6FE" stroke-opacity="0.4" stroke-width="1.5" />
+              <rect x="72" y="28" width="16" height="20" fill="#FFE14D" />
+              <!-- Gold Bow -->
+              <path d="M80 28 C66 10, 48 16, 56 28 Z" fill="#FFD016" stroke="#D97706" stroke-width="1.2" />
+              <path d="M80 28 C94 10, 112 16, 104 28 Z" fill="#FFE14D" stroke="#D97706" stroke-width="1.2" />
+              <!-- Front Stacked Gold Coin -->
+              <ellipse cx="26" cy="96" rx="18" ry="6" fill="#B45309" />
+              <rect x="8" y="84" width="36" height="12" fill="#D97706" />
+              <ellipse cx="26" cy="84" rx="18" ry="6" fill="#FFD016" />
+              <circle cx="48" cy="84" r="24" fill="url(#coinGrad1)" stroke="#FEF08A" stroke-width="2.5" />
+              <text x="48" y="92" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="23" font-weight="800" fill="#92400E">R</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Bottom Curved White/Lavender Wave -->
+        <svg class="hero-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,36 C360,82 1080,-8 1440,36 L1440,80 L0,80 Z" fill="#F6F4FE"></path>
+        </svg>
+      </section>
+
+      <!-- ===================================================================
+           3. FLOATING TRUST STATS BAR
+           =================================================================== -->
+      <section class="stats-section" aria-label="Platform Highlights">
+        <div class="container">
+          <div class="stats-card">
+            <div class="stat-item">
+              <svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <defs>
+                  <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFE666" />
+                    <stop offset="100%" stop-color="#F59E0B" />
+                  </linearGradient>
+                </defs>
+                <path d="M24 4l5.9 12 13.2 1.9-9.5 9.3 2.3 13.1L24 34.1l-11.9 6.2 2.3-13.1-9.5-9.3L18.1 16z" fill="url(#starGrad)" />
+              </svg>
+              <div>
+                <div class="stat-value tabular-nums">4.8 / 5.0</div>
+                <div class="stat-label tabular-nums" data-i18n="stats.reviews">28,400+ User Reviews</div>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <ellipse cx="20" cy="34" rx="13" ry="5" fill="#D97706" />
+                <ellipse cx="20" cy="30" rx="13" ry="5" fill="#F59E0B" />
+                <ellipse cx="20" cy="26" rx="13" ry="5" fill="#FFD016" />
+                <ellipse cx="30" cy="25" rx="12" ry="4.5" fill="#D97706" />
+                <ellipse cx="30" cy="21" rx="12" ry="4.5" fill="#F59E0B" />
+                <ellipse cx="30" cy="17" rx="12" ry="4.5" fill="#FFE14D" />
+              </svg>
+              <div>
+                <div class="stat-value tabular-nums" data-i18n="stats.coinRate">1 Coin = ₹1</div>
+                <div class="stat-label" data-i18n="stats.coinSub">Real &amp; Simple Rewards</div>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <svg class="stat-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="13" width="32" height="23" rx="6" fill="#FBBF24" />
+                <path d="M9 13c0-3 3-5 7-5h16c2 0 4 1.5 4 5" fill="#F59E0B" />
+                <rect x="27" y="21" width="14" height="9" rx="3.5" fill="#FFE666" stroke="#D97706" stroke-width="1" />
+                <circle cx="32.5" cy="25.5" r="2" fill="#92400E" />
+              </svg>
+              <div class="stat-split">
+                <div class="stat-split-label" data-i18n="stats.minLabel">Minimum<br />Withdrawal</div>
+                <div class="stat-highlight-rupee tabular-nums">₹5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           4. MULTIPLE EARNING OPPORTUNITIES
+           =================================================================== -->
+      <section class="section-pad" id="earning-options">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span data-i18n="opp.heading">Multiple Earning Opportunities</span>
+              <svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true">
+                <line x1="4" y1="8" x2="18" y2="4" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+                <line x1="6" y1="15" x2="22" y2="15" stroke="#FFD016" stroke-width="3" stroke-linecap="round" />
+                <line x1="4" y1="22" x2="18" y2="25" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </h2>
+            <p class="section-subtitle" data-i18n="opp.sub">Explore different ways to earn with Rewardzen.</p>
+          </div>
+
+          <div class="opportunities-grid">
+            <button type="button" class="opp-card is-selected" data-opp="surveys">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <rect x="10" y="9" width="28" height="33" rx="5" fill="#FFD016" />
+                  <rect x="18" y="5" width="12" height="7" rx="3" fill="#6D28D9" />
+                  <line x1="16" y1="20" x2="32" y2="20" stroke="#78350F" stroke-width="3" stroke-linecap="round" />
+                  <line x1="16" y1="27" x2="32" y2="27" stroke="#78350F" stroke-width="3" stroke-linecap="round" />
+                  <line x1="16" y1="34" x2="25" y2="34" stroke="#78350F" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.surveys">Paid Surveys</span>
+            </button>
+
+            <button type="button" class="opp-card" data-opp="tasks">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <circle cx="23" cy="25" r="15" fill="#FDE047" />
+                  <circle cx="23" cy="25" r="10" fill="#FFFFFF" />
+                  <circle cx="23" cy="25" r="5" fill="#F59E0B" />
+                  <line x1="23" y1="25" x2="38" y2="10" stroke="#4C1D95" stroke-width="3" stroke-linecap="round" />
+                  <polygon points="36,7 41,7 41,12" fill="#7C3AED" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.tasks">Simple Tasks</span>
+            </button>
+
+            <button type="button" class="opp-card" data-opp="exclusive">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <rect x="10" y="20" width="28" height="20" rx="4" fill="#6D28D9" />
+                  <rect x="8" y="15" width="32" height="7" rx="3" fill="#8B5CF6" />
+                  <rect x="21" y="15" width="6" height="25" fill="#F59E0B" />
+                  <path d="M24 15c-5-7-12-4-8 0z" fill="#F43F5E" />
+                  <path d="M24 15c5-7 12-4 8 0z" fill="#FB7185" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.exclusive">Exclusive Offers</span>
+            </button>
+
+            <button type="button" class="opp-card" data-opp="apps">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <rect x="13" y="6" width="22" height="36" rx="5" fill="#6D28D9" />
+                  <rect x="16" y="10" width="16" height="26" rx="2" fill="#A78BFA" />
+                  <path d="M24 15v12m0 0-4-4m4 4 4-4" stroke="#FFD016" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.apps">App &amp; Website Offers</span>
+            </button>
+
+            <button type="button" class="opp-card" data-opp="refer">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <circle cx="15" cy="18" r="5" fill="#F59E0B" />
+                  <path d="M7 33c0-4 3.5-7 8-7s8 3 8 7" fill="#FBBF24" />
+                  <circle cx="33" cy="18" r="5" fill="#F59E0B" />
+                  <path d="M25 33c0-4 3.5-7 8-7s8 3 8 7" fill="#FBBF24" />
+                  <circle cx="24" cy="16" r="6" fill="#A855F7" />
+                  <path d="M14 35c0-5 4.5-8.5 10-8.5s10 3.5 10 8.5" fill="#7C3AED" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.refer">Refer &amp; Earn</span>
+            </button>
+
+            <button type="button" class="opp-card" data-opp="more">
+              <div class="opp-icon-box" aria-hidden="true">
+                <svg width="42" height="42" viewBox="0 0 48 48">
+                  <rect x="9" y="9" width="13" height="13" rx="3.5" fill="#FFD016" />
+                  <rect x="26" y="9" width="13" height="13" rx="3.5" fill="#F59E0B" />
+                  <rect x="9" y="26" width="13" height="13" rx="3.5" fill="#F59E0B" />
+                  <rect x="26" y="26" width="13" height="13" rx="3.5" fill="#FBBF24" />
+                </svg>
+              </div>
+              <span class="opp-label" data-i18n="opp.more">More Earning Options</span>
+            </button>
+          </div>
+
+          <!-- Interactive Opportunity Detail Strip -->
+          <div class="opp-spotlight" id="opp-spotlight">
+            <div>
+              <h3 class="opp-spotlight-title" id="opp-detail-title">Paid Surveys — Share opinions &amp; earn fast</h3>
+              <p class="opp-spotlight-desc" id="opp-detail-desc">Answer quick partner surveys from CPX Research and BitLabs tailored to your profile.</p>
+            </div>
+            <div class="opp-spotlight-meta">
+              <span class="opp-payout-text tabular-nums" id="opp-detail-payout">Avg. 10 – 60 Coins per survey</span>
+              <button type="button" class="btn-purple-sm" data-open-download="download">
+                <span data-i18n="opp.tryBtn">Start in App</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           5. HOW IT WORKS? (Dark Royal Purple Rounded Panel)
+           =================================================================== -->
+      <section class="how-section" id="how-it-works">
+        <div class="container">
+          <div class="how-panel">
+            <div class="how-header">
+              <h2 class="how-title">
+                <span data-i18n="how.titlePrefix">How It</span>
+                <span class="how-title-gold" data-i18n="how.titleGold">Works?</span>
+              </h2>
+              <p class="how-subtitle" data-i18n="how.subtitle">Start earning in just 3 simple steps.</p>
+            </div>
+
+            <div class="steps-row">
+              <div class="step-card">
+                <div class="step-badge tabular-nums">1</div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v12"></path>
+                    <path d="m7 10 5 5 5-5"></path>
+                    <path d="M5 20h14"></path>
+                  </svg>
+                </div>
+                <h3 class="step-title" data-i18n="how.step1Title">Download &amp; Register</h3>
+                <p class="step-desc" data-i18n="how.step1Desc">Install the Rewardzen app and create your account.</p>
+              </div>
+
+              <div class="step-arrow" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m6 17 5-5-5-5"></path>
+                  <path d="m13 17 5-5-5-5"></path>
+                </svg>
+              </div>
+
+              <div class="step-card">
+                <div class="step-badge tabular-nums">2</div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="5" cy="7" r="1.5"></circle>
+                    <line x1="10" y1="7" x2="20" y2="7"></line>
+                    <circle cx="5" cy="12" r="1.5"></circle>
+                    <line x1="10" y1="12" x2="20" y2="12"></line>
+                    <circle cx="5" cy="17" r="1.5"></circle>
+                    <line x1="10" y1="17" x2="20" y2="17"></line>
+                  </svg>
+                </div>
+                <h3 class="step-title" data-i18n="how.step2Title">Complete Tasks</h3>
+                <p class="step-desc" data-i18n="how.step2Desc">Explore surveys, offers and other tasks.</p>
+              </div>
+
+              <div class="step-arrow" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m6 17 5-5-5-5"></path>
+                  <path d="m13 17 5-5-5-5"></path>
+                </svg>
+              </div>
+
+              <div class="step-card">
+                <div class="step-badge tabular-nums">3</div>
+                <div class="step-icon" aria-hidden="true">
+                  <svg width="36" height="36" viewBox="0 0 48 48">
+                    <ellipse cx="24" cy="36" rx="14" ry="5" fill="#D97706" />
+                    <ellipse cx="24" cy="30" rx="14" ry="5" fill="#F59E0B" />
+                    <ellipse cx="24" cy="24" rx="14" ry="5" fill="#FFD016" />
+                    <ellipse cx="24" cy="18" rx="14" ry="5" fill="#FFE666" />
+                  </svg>
+                </div>
+                <h3 class="step-title" data-i18n="how.step3Title">Earn &amp; Withdraw</h3>
+                <p class="step-desc" data-i18n="how.step3Desc">Collect coins and withdraw your earnings from ₹5.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           6. WHY CHOOSE REWARDZEN?
+           =================================================================== -->
+      <section class="why-section">
+        <div class="container">
+          <div class="why-grid">
+            <div class="why-left">
+              <svg class="why-trophy" viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                  <linearGradient id="trophyGold" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFF08A" />
+                    <stop offset="55%" stop-color="#FFD016" />
+                    <stop offset="100%" stop-color="#D97706" />
+                  </linearGradient>
+                </defs>
+                <!-- Laurel Wreath Left & Right -->
+                <path d="M24 92 C14 78, 14 58, 25 46" fill="none" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" />
+                <path d="M96 92 C106 78, 106 58, 95 46" fill="none" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" />
+                <!-- Pedestal -->
+                <rect x="42" y="92" width="36" height="12" rx="4" fill="#4C1D95" />
+                <rect x="52" y="74" width="16" height="18" fill="url(#trophyGold)" />
+                <!-- Handles -->
+                <path d="M35 30 C18 30, 18 56, 39 58" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round" />
+                <path d="M85 30 C102 30, 102 56, 81 58" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round" />
+                <!-- Cup -->
+                <path d="M35 24 H85 L79 62 C77 73, 68 78, 60 78 C52 78, 43 73, 41 62 Z" fill="url(#trophyGold)" />
+                <ellipse cx="60" cy="24" rx="25" ry="5" fill="#FEF08A" />
+              </svg>
+
+              <h2 class="why-heading">
+                <span data-i18n="why.titlePrefix">Why Choose</span>
+                <span class="why-heading-accent">Rewardzen?</span>
+              </h2>
+            </div>
+
+            <ul class="why-list">
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span data-i18n="why.item1">Multiple Earning Opportunities</span>
+              </li>
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span data-i18n="why.item2">Easy &amp; Quick Online Tasks</span>
+              </li>
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span data-i18n="why.item3">Trusted &amp; Verified Partners</span>
+              </li>
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span data-i18n="why.item4">Fast &amp; Convenient Withdrawals</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           7. APP SCREENS, VERIFIED REVIEWS & EARNINGS CALCULATOR (#reviews)
+           =================================================================== -->
+      <section class="showcase-section" id="reviews">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" data-i18n="screens.title">Inside the Rewardzen App</h2>
+            <p class="section-subtitle" data-i18n="screens.subtitle">Preview real screens and verified member feedback before downloading.</p>
+          </div>
+
+          <div class="showcase-tabs" role="tablist" aria-label="App screen categories">
+            <button type="button" class="tab-btn is-active" data-screen-filter="all" data-i18n="screens.tabAll">All Screens</button>
+            <button type="button" class="tab-btn" data-screen-filter="Home" data-i18n="screens.tabHome">Dashboard</button>
+            <button type="button" class="tab-btn" data-screen-filter="Offers" data-i18n="screens.tabOffers">Offers &amp; Surveys</button>
+            <button type="button" class="tab-btn" data-screen-filter="Wallet" data-i18n="screens.tabWallet">Withdrawals</button>
+            <button type="button" class="tab-btn" data-screen-filter="Refer" data-i18n="screens.tabRefer">Refer &amp; Earn</button>
+          </div>
+
+          <div class="screens-strip" id="screens-strip"></div>
+
+          <div class="proof-grid">
+            <div class="reviews-panel">
+              <h3 class="panel-heading" data-i18n="reviews.heading">Verified User Reviews (4.8 / 5.0)</h3>
+              <p class="panel-sub" data-i18n="reviews.sub">28,400+ active members redeeming directly via UPI &amp; bank transfer.</p>
+
+              <div class="reviews-list">
+                <article class="review-card">
+                  <div class="review-top">
+                    <span class="review-author">Aarav Sharma · Pune</span>
+                    <span class="review-rating tabular-nums">5.0 ★</span>
+                  </div>
+                  <p class="review-quote" data-i18n="reviews.q1">"Withdrew ₹240 straight to UPI after completing 3 banking offers and daily surveys. Coins credited within minutes."</p>
+                </article>
+
+                <article class="review-card">
+                  <div class="review-top">
+                    <span class="review-author">Priya Nair · Kochi</span>
+                    <span class="review-rating tabular-nums">4.9 ★</span>
+                  </div>
+                  <p class="review-quote" data-i18n="reviews.q2">"1 Coin = ₹1 keeps everything transparent. The ₹5 minimum withdrawal makes it easy to test payouts right away."</p>
+                </article>
+
+                <article class="review-card">
+                  <div class="review-top">
+                    <span class="review-author">Rohan Verma · Jaipur</span>
+                    <span class="review-rating tabular-nums">4.8 ★</span>
+                  </div>
+                  <p class="review-quote" data-i18n="reviews.q3">"Invited my college group using my referral code and earned steady bonus coins every time they completed tasks."</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="calc-panel">
+              <h3 class="panel-heading" data-i18n="calc.heading">Monthly Earnings Estimator</h3>
+              <p class="panel-sub" data-i18n="calc.sub">Slide to estimate your monthly rewards at 1 Coin = ₹1.</p>
+
+              <div class="calc-group">
+                <div class="calc-label-row">
+                  <label for="tasks-slider" data-i18n="calc.tasksLabel">Daily tasks &amp; surveys</label>
+                  <span class="calc-val tabular-nums" id="calc-tasks-val">4 / day</span>
+                </div>
+                <input type="range" id="tasks-slider" class="calc-slider" min="1" max="15" value="4" />
+              </div>
+
+              <div class="calc-group">
+                <div class="calc-label-row">
+                  <label for="friends-slider" data-i18n="calc.friendsLabel">Friends invited this month</label>
+                  <span class="calc-val tabular-nums" id="calc-friends-val">6 friends</span>
+                </div>
+                <input type="range" id="friends-slider" class="calc-slider" min="0" max="30" value="6" />
+              </div>
+
+              <div class="calc-result-box">
+                <div>
+                  <div class="calc-result-label" data-i18n="calc.estLabel">Estimated Monthly Payout</div>
+                  <div class="calc-result-rupees tabular-nums" id="calc-total-rupees">₹1,950</div>
+                </div>
+                <div class="calc-result-coins tabular-nums">
+                  <div id="calc-total-coins">1,950 Coins</div>
+                  <div style="font-size:0.78rem; opacity:0.78; font-weight:500;">1 Coin = ₹1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           8. BOTTOM ROYAL PURPLE CTA WAVE BANNER + QUIET FOOTER
+           =================================================================== -->
+      <section class="bottom-cta-section">
+        <svg class="bottom-cta-wave" viewBox="0 0 1440 54" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,0 L1440,0 L1440,26 C1060,58 380,-6 0,34 Z" fill="#F6F4FE"></path>
+        </svg>
+
+        <div class="container">
+          <div class="bottom-cta-inner">
+            <div class="bottom-cta-copy">
+              <svg class="bottom-coin" viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="32" r="28" fill="url(#coinGrad1)" stroke="#FDE047" stroke-width="3" />
+                <circle cx="32" cy="32" r="21" fill="none" stroke="#B45309" stroke-opacity="0.35" stroke-width="2" />
+                <text x="32" y="40" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="25" font-weight="800" fill="#92400E">R</text>
+              </svg>
+
+              <div>
+                <h2 class="bottom-cta-title">
+                  <span data-i18n="bottom.titlePrefix">Ready to</span>
+                  <span class="bottom-cta-title-gold" data-i18n="bottom.titleGold">Start Earning?</span>
+                </h2>
+                <p class="bottom-cta-sub" data-i18n="bottom.sub">
+                  Download Rewardzen App now and explore multiple ways to earn real rewards!
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom-cta-btn-wrap">
+              <button type="button" class="btn-gold" data-open-download="download">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span data-i18n="hero.cta">Download Rewardzen App</span>
+              </button>
+
+              <svg width="28" height="36" viewBox="0 0 28 36" aria-hidden="true">
+                <line x1="2" y1="8" x2="18" y2="3" stroke="#FFD016" stroke-width="3" stroke-linecap="round" />
+                <line x1="4" y1="18" x2="24" y2="18" stroke="#FFE14D" stroke-width="3" stroke-linecap="round" />
+                <line x1="2" y1="28" x2="18" y2="33" stroke="#FFD016" stroke-width="3" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+
+          <footer class="footer-bar">
+            <div>Rewardzen © <span id="footer-year">2026</span> · Android 8.0+ · v2.4.0</div>
+            <div class="footer-links">
+              <a href="#how-it-works" data-i18n="nav.how">How it Works</a>
+              <a href="#earning-options" data-i18n="nav.options">Earning Options</a>
+              <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+              <a href="./Rewardzen.apk" download="Rewardzen.apk" data-i18n="footer.directApk">Direct APK</a>
+            </div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         9. DOWNLOAD APK MODAL (Direct Download + Pure JS QR Code + Guide)
+         =================================================================== -->
+    <div id="download-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div class="modal-brand">
+            <img src="./logo.jpg" alt="Rewardzen" referrerpolicy="no-referrer" />
+            <div>
+              <h3 class="modal-title" id="modal-title-text" data-i18n="modal.title">Download Rewardzen APK</h3>
+              <p class="modal-sub" data-i18n="modal.sub">Verified Android package · Android 8.0+</p>
+            </div>
+          </div>
+          <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-tabs" role="tablist">
+          <button type="button" class="modal-tab is-active" data-modal-tab="download" data-i18n="modal.tabDirect">Direct APK</button>
+          <button type="button" class="modal-tab" data-modal-tab="qr" data-i18n="modal.tabQr">Scan QR Code</button>
+          <button type="button" class="modal-tab" data-modal-tab="guide" data-i18n="modal.tabGuide">Install Guide</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Panel 1: Direct Download -->
+          <div data-modal-panel="download">
+            <div class="version-grid">
+              <button type="button" class="version-btn is-active" data-version-btn="2.4.0">
+                <div class="version-name tabular-nums">v2.4.0 (Latest)</div>
+                <div class="version-meta tabular-nums">29.3 MB · Universal APK</div>
+              </button>
+              <button type="button" class="version-btn" data-version-btn="2.3.8">
+                <div class="version-name tabular-nums">v2.3.8 (Stable)</div>
+                <div class="version-meta tabular-nums">29.3 MB · Legacy Compatible</div>
+              </button>
+            </div>
+
+            <div class="sha-box">
+              <div class="sha-top">
+                <span>SHA-256 Checksum</span>
+                <button type="button" id="modal-copy-hash" class="sha-copy-btn">Copy</button>
+              </div>
+              <div class="sha-code tabular-nums" id="modal-sha256">a5793cb9209cb650678a543562c43c9caf45514121a621d7002fcb40bccad11c</div>
+            </div>
+
+            <div id="modal-download-idle">
+              <button type="button" id="modal-start-download-btn" class="btn-gold" style="width:100%;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span id="modal-start-download-label">Download Rewardzen.apk (29.3 MB)</span>
+              </button>
+            </div>
+
+            <div id="modal-download-progress" class="progress-box hidden">
+              <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:700;">
+                <span id="modal-progress-filename">Preparing Rewardzen.apk...</span>
+                <span id="modal-progress-pct" class="tabular-nums">10%</span>
+              </div>
+              <div class="progress-track">
+                <div id="modal-progress-bar" class="progress-fill"></div>
+              </div>
+              <div id="modal-progress-note" style="font-size:0.78rem; color:#585076;">Starting verified package download...</div>
+            </div>
+          </div>
+
+          <!-- Panel 2: QR Code -->
+          <div data-modal-panel="qr" class="hidden">
+            <div class="qr-wrap">
+              <div class="qr-frame">
+                <img id="modal-qr-img" class="qr-img" src="" alt="QR Code to download Rewardzen APK" />
+              </div>
+              <div style="font-size:0.86rem; color:#585076; max-width:340px;" data-i18n="modal.qrHint">
+                Scan this QR code with your Android phone camera to download Rewardzen directly.
+              </div>
+              <div class="qr-actions">
+                <button type="button" id="modal-save-qr" class="btn-outline-purple">Save QR PNG</button>
+                <button type="button" id="modal-copy-link" class="btn-outline-purple">Copy Link</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: Install Guide -->
+          <div data-modal-panel="guide" class="hidden">
+            <div class="guide-list">
+              <div class="guide-item">
+                <span class="guide-num tabular-nums">1</span>
+                <div>
+                  <div style="font-weight:700; font-size:0.94rem;">Download Rewardzen.apk</div>
+                  <div style="font-size:0.84rem; color:#585076;">Tap Download Rewardzen.apk in the Direct APK tab and confirm Save if prompted.</div>
+                </div>
+              </div>
+              <div class="guide-item">
+                <span class="guide-num tabular-nums">2</span>
+                <div>
+                  <div style="font-weight:700; font-size:0.94rem;">Allow Browser Installs</div>
+                  <div style="font-size:0.84rem; color:#585076;">Open Android Settings when prompted and enable "Allow from this source".</div>
+                </div>
+              </div>
+              <div class="guide-item">
+                <span class="guide-num tabular-nums">3</span>
+                <div>
+                  <div style="font-weight:700; font-size:0.94rem;">Install &amp; Claim Rewards</div>
+                  <div style="font-size:0.84rem; color:#585076;">Tap Install, sign in, and withdraw coins starting from ₹5.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================
+         10. SCREENSHOT LIGHTBOX MODAL
+         =================================================================== -->
+    <div id="lightbox-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-label="App Screenshot Preview">
+      <div class="lightbox-content">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="" referrerpolicy="no-referrer" />
+        <div class="lightbox-footer">
+          <div>
+            <div id="lightbox-title" style="font-weight:700; font-size:0.96rem;"></div>
+            <div id="lightbox-desc" style="font-size:0.8rem; color:#c8bce8;"></div>
+          </div>
+          <button type="button" id="lightbox-close-btn" class="modal-close" aria-label="Close preview">✕</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
