@@ -945,26 +945,55 @@
   function initNavigation() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+    const header = document.querySelector('.site-header');
+
+    function setDrawerOpen(open) {
+      if (!drawer || !mobileBtn) return;
+      drawer.classList.toggle('hidden', !open);
+      mobileBtn.setAttribute('aria-expanded', String(open));
+      if (iconOpen) iconOpen.classList.toggle('hidden', open);
+      if (iconClose) iconClose.classList.toggle('hidden', !open);
+    }
 
     if (mobileBtn && drawer) {
-      mobileBtn.addEventListener('click', () => {
-        const hidden = drawer.classList.toggle('hidden');
-        mobileBtn.setAttribute('aria-expanded', String(!hidden));
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = drawer.classList.contains('hidden');
+        setDrawerOpen(willOpen);
       });
 
-      drawer.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          drawer.classList.add('hidden');
-          mobileBtn.setAttribute('aria-expanded', 'false');
+      drawer.querySelectorAll('a, button').forEach((el) => {
+        el.addEventListener('click', () => {
+          setDrawerOpen(false);
         });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!drawer.classList.contains('hidden') && header && !header.contains(e.target)) {
+          setDrawerOpen(false);
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !drawer.classList.contains('hidden')) {
+          setDrawerOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768 && !drawer.classList.contains('hidden')) {
+          setDrawerOpen(false);
+        }
       });
     }
 
-    const navLinks = document.querySelectorAll('.nav-links .nav-link');
+    const navLinks = document.querySelectorAll('.nav-links .nav-link, .mobile-drawer .mobile-nav-link');
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        navLinks.forEach((l) => l.classList.remove('is-active'));
-        link.classList.add('is-active');
+        const href = link.getAttribute('href');
+        navLinks.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === href));
       });
     });
   }
@@ -1053,11 +1082,16 @@
     if (title) title.textContent = shot.title;
     if (desc) desc.textContent = shot.desc;
     modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
   }
 
   function closeLightbox() {
     const modal = document.getElementById('lightbox-modal');
     if (modal) modal.classList.add('hidden');
+    const dlModal = document.getElementById('download-modal');
+    if (!dlModal || dlModal.classList.contains('hidden')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 
   function initShowcase() {
@@ -1174,6 +1208,7 @@
   function openDownloadModal(tab) {
     const modal = document.getElementById('download-modal');
     if (modal) modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
     setModalTab(tab || 'download');
     updateModalVersionUI();
   }
@@ -1181,6 +1216,10 @@
   function closeDownloadModal() {
     const modal = document.getElementById('download-modal');
     if (modal) modal.classList.add('hidden');
+    const lbModal = document.getElementById('lightbox-modal');
+    if (!lbModal || lbModal.classList.contains('hidden')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 
   function triggerApkDownload(filename) {

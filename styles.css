@@ -44,6 +44,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -54,7 +55,16 @@ body {
   background-color: var(--purple-50);
   color: var(--ink-900);
   line-height: 1.55;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+main[id],
+section[id] {
+  scroll-margin-top: 72px;
 }
 
 img,
@@ -71,11 +81,13 @@ select {
 
 button {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :focus-visible {
@@ -300,33 +312,60 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+  transition: background-color 160ms var(--ease-smooth), border-color 160ms var(--ease-smooth);
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn[aria-expanded='true'] {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 208, 22, 0.55);
 }
 
 .mobile-drawer {
-  padding: 14px 20px 20px;
-  background: #17063d;
+  padding: 12px 16px 18px;
+  background: rgba(19, 6, 49, 0.98);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 22px 44px rgba(10, 3, 28, 0.55);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .mobile-nav-link {
-  padding: 11px 12px;
-  border-radius: 10px;
-  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 600;
   font-size: 0.96rem;
+  transition: background-color 150ms ease, color 150ms ease;
 }
 
-.mobile-nav-link:hover {
-  background: rgba(255, 255, 255, 0.08);
+.mobile-nav-link:hover,
+.mobile-nav-link.is-active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gold-400);
+}
+
+.mobile-drawer-footer {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-drawer-cta {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
 }
 
 /* ==========================================================================
@@ -1278,6 +1317,7 @@ a {
 
 .calc-slider {
   width: 100%;
+  height: 32px;
   accent-color: var(--gold-500);
   cursor: pointer;
 }
@@ -1442,9 +1482,23 @@ a {
   flex-direction: column;
 }
 
+.modal-header-wrap {
+  background: linear-gradient(135deg, #1a0644 0%, #34107b 100%);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.sheet-handle {
+  display: none;
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.34);
+  margin: 10px auto 0;
+}
+
 .modal-header {
   padding: 18px 22px;
-  background: linear-gradient(135deg, #1a0644 0%, #34107b 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -1708,8 +1762,734 @@ a {
 }
 
 /* ==========================================================================
-   10. RESPONSIVE BREAKPOINTS (Desktop 1440px, Tablet, Mobile)
+   10. RESPONSIVE BREAKPOINTS (Mobile-Crafted + Tablet + Desktop 1440px)
    ========================================================================== */
+
+/* Mobile & Small Tablet Refinements (< 960px) */
+@media (max-width: 959px) {
+  .hero-copy {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-pillars {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile Header, Stats & Bottom CTA (< 768px) */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .header-inner {
+    height: 60px;
+    gap: 12px;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
+
+  .brand-name {
+    font-size: 1.12rem;
+  }
+
+  /* Move Download CTA into mobile drawer + hero so top bar never overflows */
+  .nav-cta {
+    display: none;
+  }
+
+  .lang-btn {
+    height: 42px;
+    padding: 0 11px;
+    font-size: 0.82rem;
+  }
+
+  /* Floating Stats Card: clean vertical fintech list with hairlines */
+  .stats-section {
+    margin-top: -36px;
+    margin-bottom: 36px;
+  }
+
+  .stats-card {
+    padding: 6px 16px;
+    gap: 0;
+    border-radius: 20px;
+  }
+
+  .stat-item {
+    justify-content: flex-start;
+    padding: 14px 2px;
+    gap: 14px;
+  }
+
+  .stat-item + .stat-item {
+    border-top: 1px solid rgba(65, 20, 151, 0.09);
+  }
+
+  .stat-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .stat-value {
+    font-size: 1.24rem;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+  }
+
+  .stat-split {
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stat-split-label {
+    font-size: 0.9rem;
+  }
+
+  .stat-highlight-rupee {
+    font-size: 1.85rem;
+  }
+
+  /* Bottom CTA & Footer centered on mobile */
+  .bottom-cta-section {
+    padding-top: 52px;
+    padding-bottom: 28px;
+  }
+
+  .bottom-cta-wave {
+    height: 36px;
+  }
+
+  .bottom-cta-inner {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 28px;
+  }
+
+  .bottom-cta-copy {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bottom-coin {
+    width: 52px;
+    height: 52px;
+  }
+
+  .bottom-cta-title {
+    font-size: 1.65rem;
+  }
+
+  .bottom-cta-sub {
+    font-size: 0.9rem;
+  }
+
+  .bottom-cta-btn-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottom-cta-sparks {
+    display: none;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 18px;
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  .footer-links a {
+    padding: 6px 2px;
+  }
+}
+
+/* Smartphone Layout Optimization (< 640px) */
+@media (max-width: 639px) {
+  /* Hero compact proportion + zero clipping on 320px-430px */
+  .hero-section {
+    padding-top: 26px;
+    padding-bottom: 70px;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.92rem, 8vw, 2.5rem);
+    line-height: 1.12;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.93rem;
+    line-height: 1.56;
+    margin-bottom: 22px;
+  }
+
+  .hero-pillars {
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .hero-pillar {
+    padding: 4px 5px;
+    gap: 7px;
+  }
+
+  .hero-pillar-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-pillar-label {
+    font-size: 0.74rem;
+    line-height: 1.25;
+  }
+
+  .btn-gold {
+    width: 100%;
+    max-width: 340px;
+    min-height: 50px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Hero Phone Stage scaled cleanly inside narrow phone width */
+  .hero-visual {
+    min-height: 325px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .hero-stage-glow {
+    width: 270px;
+    height: 270px;
+  }
+
+  .hero-phone-frame {
+    width: 206px;
+    padding: 9px;
+    border-radius: 30px;
+    transform: perspective(900px) rotateY(-4deg) rotateZ(1deg);
+  }
+
+  .hero-phone-screen {
+    border-radius: 22px;
+    padding: 14px 11px 15px;
+  }
+
+  .phone-notch {
+    width: 58px;
+    height: 5px;
+    margin-bottom: 10px;
+  }
+
+  .phone-app-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    margin-bottom: 6px;
+  }
+
+  .phone-app-name {
+    font-size: 1.08rem;
+    margin-bottom: 10px;
+  }
+
+  .phone-menu-list {
+    gap: 6px;
+  }
+
+  .phone-menu-item {
+    padding: 8px 10px;
+    font-size: 0.83rem;
+    min-height: 40px;
+    border-radius: 10px;
+  }
+
+  .phone-menu-ico {
+    width: 22px;
+    height: 22px;
+  }
+
+  .phone-stage-disc {
+    width: 264px;
+    height: 40px;
+    margin-top: -22px;
+  }
+
+  .float-coin-1 {
+    top: 8px;
+    left: calc(50% - 142px);
+    width: 38px;
+  }
+
+  .float-coin-2 {
+    top: 122px;
+    left: calc(50% - 150px);
+    width: 34px;
+  }
+
+  .float-coin-3 {
+    top: 72px;
+    right: calc(50% - 146px);
+    width: 36px;
+  }
+
+  .float-gift-cluster {
+    bottom: 10px;
+    right: calc(50% - 144px);
+    width: 82px;
+  }
+
+  .hero-wave {
+    height: 40px;
+  }
+
+  /* Opportunities Section */
+  .section-pad {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+
+  .section-header {
+    margin-bottom: 22px;
+  }
+
+  .section-title {
+    font-size: 1.52rem;
+    gap: 6px;
+  }
+
+  .section-title svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .opportunities-grid {
+    gap: 12px;
+  }
+
+  .opp-card {
+    padding: 16px 10px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .opp-icon-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .opp-icon-box svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .opp-label {
+    font-size: 0.84rem;
+  }
+
+  .opp-spotlight {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .opp-spotlight-title {
+    font-size: 0.98rem;
+  }
+
+  .opp-spotlight-desc {
+    font-size: 0.86rem;
+  }
+
+  .opp-spotlight-meta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(65, 20, 151, 0.08);
+  }
+
+  .opp-payout-text {
+    font-size: 0.88rem;
+  }
+
+  .btn-purple-sm {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  /* How It Works: Compact scannable horizontal step rows on smartphone */
+  .how-section {
+    padding-bottom: 40px;
+  }
+
+  .how-panel {
+    border-radius: 22px;
+    padding: 28px 16px 24px;
+  }
+
+  .how-header {
+    margin-bottom: 22px;
+  }
+
+  .how-title {
+    font-size: 1.6rem;
+  }
+
+  .how-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .steps-row {
+    gap: 12px;
+  }
+
+  .step-card {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 3px;
+    text-align: left;
+    align-items: start;
+    padding: 16px 14px;
+    border-radius: 16px;
+  }
+
+  .step-badge {
+    position: static;
+    transform: none;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+
+  .step-icon {
+    display: none;
+  }
+
+  .step-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .step-desc {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.85rem;
+    max-width: none;
+  }
+
+  /* Why Choose Rewardzen */
+  .why-section {
+    padding-bottom: 42px;
+  }
+
+  .why-grid {
+    padding: 22px 16px;
+    border-radius: 20px;
+    gap: 18px;
+  }
+
+  .why-left {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .why-trophy {
+    width: 64px;
+    height: 64px;
+  }
+
+  .why-heading {
+    font-size: 1.46rem;
+  }
+
+  .why-list {
+    gap: 10px;
+  }
+
+  .why-item {
+    font-size: 0.92rem;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--purple-50);
+    border: 1px solid rgba(65, 20, 151, 0.06);
+  }
+
+  /* Showcase Tabs & Horizontal Carousel */
+  .showcase-section {
+    padding-bottom: 48px;
+  }
+
+  .showcase-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    margin-bottom: 16px;
+  }
+
+  .showcase-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    min-height: 42px;
+    padding: 9px 14px;
+    font-size: 0.84rem;
+    flex-shrink: 0;
+  }
+
+  .screens-strip {
+    gap: 12px;
+    padding: 4px 2px 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .screen-card {
+    flex: 0 0 172px;
+    padding: 8px;
+    border-radius: 16px;
+  }
+
+  .screen-title {
+    font-size: 0.84rem;
+  }
+
+  /* Reviews + Calculator */
+  .proof-grid {
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .reviews-panel,
+  .calc-panel {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .panel-heading {
+    font-size: 1.15rem;
+  }
+
+  .panel-sub {
+    font-size: 0.86rem;
+    margin-bottom: 16px;
+  }
+
+  .review-card {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .review-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .review-author {
+    font-size: 0.88rem;
+  }
+
+  .review-quote {
+    font-size: 0.85rem;
+  }
+
+  .calc-label-row {
+    font-size: 0.85rem;
+    gap: 8px;
+  }
+
+  .calc-result-box {
+    padding: 14px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .calc-result-rupees {
+    font-size: 1.65rem;
+  }
+
+  /* Native Mobile Bottom Sheet for Download Modal */
+  #download-modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  #download-modal .modal-card {
+    max-width: 100%;
+    border-radius: 24px 24px 0 0;
+    max-height: 90dvh;
+    border-bottom: none;
+  }
+
+  .sheet-handle {
+    display: block;
+  }
+
+  .modal-header {
+    padding: 12px 16px 14px;
+  }
+
+  .modal-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-title {
+    font-size: 0.98rem;
+  }
+
+  .modal-sub {
+    font-size: 0.76rem;
+  }
+
+  .modal-close {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .modal-tabs {
+    padding: 0 16px;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .modal-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modal-tab {
+    padding: 12px 2px;
+    font-size: 0.84rem;
+    min-height: 44px;
+    flex-shrink: 0;
+  }
+
+  .modal-body {
+    padding: 16px 16px calc(22px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .modal-body .btn-gold {
+    max-width: 100%;
+  }
+
+  .qr-img {
+    width: 176px;
+    height: 176px;
+  }
+
+  .btn-outline-purple {
+    min-height: 42px;
+  }
+
+  #lightbox-modal {
+    padding: 12px;
+  }
+
+  .lightbox-content {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .lightbox-img {
+    max-height: 66dvh;
+  }
+}
+
+/* Very Narrow Phones (< 400px) */
+@media (max-width: 399px) {
+  .version-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero-phone-frame {
+    width: 192px;
+  }
+
+  .phone-stage-disc {
+    width: 242px;
+  }
+
+  .float-coin-1 {
+    left: calc(50% - 134px);
+    width: 34px;
+  }
+
+  .float-coin-2 {
+    left: calc(50% - 140px);
+    width: 30px;
+  }
+
+  .float-coin-3 {
+    right: calc(50% - 136px);
+    width: 32px;
+  }
+
+  .float-gift-cluster {
+    right: calc(50% - 134px);
+    width: 74px;
+  }
+}
+
 @media (min-width: 640px) {
   .opportunities-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1721,8 +2501,9 @@ a {
     display: flex;
   }
 
-  .mobile-menu-btn {
-    display: none;
+  .mobile-menu-btn,
+  .mobile-drawer {
+    display: none !important;
   }
 
   .stats-card {
