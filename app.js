@@ -520,58 +520,58 @@
 
   const APP_SCREENSHOTS = [
     {
-      title: 'Dashboard & Live Balance',
-      category: 'Home',
-      desc: 'Track real-time coins, daily rewards, and quick withdrawals.',
-      image: './4.jpg'
-    },
-    {
-      title: 'Explore High-Paying Offers',
+      title: 'All Offers & Quick Tasks',
       category: 'Offers',
-      desc: 'Complete trusted sponsor offers & partner surveys.',
-      image: './6.jpg'
+      desc: 'Browse available partner offers and quick tasks with their coin rewards.',
+      image: './1.jpg'
     },
     {
-      title: 'Refer & Earn Passive Coins',
-      category: 'Refer',
-      desc: 'Invite friends and earn instant signup & task bonuses.',
-      image: './3.jpg'
-    },
-    {
-      title: 'Instant UPI & Bank Payouts',
+      title: 'Wallet Overview & Balance',
       category: 'Wallet',
-      desc: 'Withdraw directly starting from ₹5 with 1 Coin = ₹1.',
+      desc: 'Review your balance, earnings, referral coins, and recent transactions.',
       image: './2.jpg'
-    },
-    {
-      title: 'Task Verification Feed',
-      category: 'Offers',
-      desc: 'Monitor pending and completed offers transparently.',
-      image: './7.jpg'
     },
     {
       title: 'Account & Security Settings',
       category: 'Home',
-      desc: 'Manage linked payout methods and referral stats.',
+      desc: 'Manage your profile, app preferences, support options, and account settings.',
+      image: './3.jpg'
+    },
+    {
+      title: 'Refer & Earn',
+      category: 'Refer',
+      desc: 'Invite friends, share your referral code, and track referral rewards.',
+      image: './4.jpg'
+    },
+    {
+      title: 'Instant UPI & Bank Payouts',
+      category: 'Wallet',
+      desc: 'Enter your bank details and submit a withdrawal request from the app.',
+      image: './5.jpg'
+    },
+    {
+      title: 'Task Verification Feed',
+      category: 'Offers',
+      desc: 'Review offer instructions, requirements, rewards, and task status.',
+      image: './6.jpg'
+    },
+    {
+      title: 'Help Center & Support',
+      category: 'Home',
+      desc: 'Find support contact details and create a support ticket when needed.',
+      image: './7.jpg'
+    },
+    {
+      title: 'Report a Bug',
+      category: 'Home',
+      desc: 'Submit a categorized bug report with severity and reproduction details.',
       image: './8.jpg'
     },
     {
-      title: 'Transaction Ledger',
-      category: 'Wallet',
-      desc: 'View every coin earned and rupee withdrawn cleanly.',
-      image: './9.jpg'
-    },
-    {
-      title: 'Quick Onboarding Flow',
+      title: 'Dashboard & Live Balance',
       category: 'Home',
-      desc: 'Start earning within 60 seconds after installing.',
-      image: './1.jpg'
-    },
-    {
-      title: 'Daily Bonus & Streaks',
-      category: 'Offers',
-      desc: 'Claim extra coins daily just for opening the app.',
-      image: './5.jpg'
+      desc: 'Track real-time coins, daily rewards, and quick withdrawals.',
+      image: './9.jpg'
     }
   ];
 
